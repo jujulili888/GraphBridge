@@ -30,7 +30,7 @@ def SVD_FeatureReduction(out_channels, x):
 if __name__ == '__main__':
     device_idx = 1
     device = torch.device("cuda:" + str(device_idx)) if torch.cuda.is_available() else torch.device("cpu")
-    dataname = 'Cora' 
+    dataname = 'Flickr' 
     #
     if dataname in ['CiteSeer', 'PubMed', 'Cora']:
         dataset = Planetoid(root='./dataset/', name=dataname)
@@ -151,7 +151,7 @@ if __name__ == '__main__':
         dataset.data = data
         print(dataset, dataset.data)
 
-    pk.dump(dataset, open('./dataset/{}/feature_reduced.data'.format("Cora"), 'bw'))
-    print('./dataset/{}/feature_reduced.data finish processing!!'.format("Cora"))
+    pk.dump(dataset, open('./dataset/{}/feature_reduced.data'.format("Flickr"), 'bw'))
+    print('./dataset/{}/feature_reduced.data finish processing!!'.format("Flickr"))
 
     
